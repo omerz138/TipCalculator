@@ -30,6 +30,9 @@ public class TipCalculatorActivity extends Activity  {
 			double amount;
 			public void onClick(View v) {
 				
+				if(billAm.getText().toString().matches("")){
+					return;
+				}
 				amount = Double.parseDouble(billAm.getText().toString())*0.12;
 				if(roundChk.isChecked()){
 					txtTip.setText("Tip: $"+(int)Math.round(amount));
@@ -37,7 +40,6 @@ public class TipCalculatorActivity extends Activity  {
 				else{
 					txtTip.setText("Tip: $"+amount);
 				}
-
 			}
 		});
 	}
